@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Test
+title: Using Eddie
 parent: Computing
 nav_order: 1
 ---
