@@ -2,7 +2,7 @@
 layout: default
 title: Computer Purchases
 parent: Getting Started
-nav_order: 2
+nav_order: 3
 ---
 
 # Computer Purchases
