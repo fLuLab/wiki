@@ -8,6 +8,12 @@ nav_order: 1
 # Software Setup for New Computers
 If you have taken delivery of a new computer, you may find the following list of software commonly used in fLuLab useful.
 
+## Contents
+- [1. Package managers](#1-package-managers)
+- [2. Programming languages and IDEs](#2-programming-languages-and-ides)
+- [3. Frequently Used CLI Software](#3-frequently-used-cli-software)
+- [4. Frequently Used GUI Software](#3-frequently-used-gui-software)
+
 ## 1. Package managers
 A **package manager** is a tool that automates installing, updating, configuring and removing software. Instead of downloading installers by hand and tracking down dependencies yourself, you ask the package manager for what you need and it handles the rest.
 
@@ -230,3 +236,191 @@ java -version
 #### Suggested IDE: IntelliJ IDEA
 
 JetBrains' flagship IDE for Java, Kotlin and other JVM languages. Download from [jetbrains.com/idea](https://www.jetbrains.com/idea/download/) or via the [JetBrains Toolbox](#24-jetbrains-toolbox). Many JetBrains IDEs share the same interface and keyboard shortcuts, so knowing PyCharm makes IntelliJ easier to learn, and vice versa.
+
+
+## 3. Frequently Used CLI Software
+
+Most of the command-line tools below can be installed with conda from the `bioconda` and `conda-forge` channels, which is the easiest way to keep versions consistent across the group (see section 1.1). We suggest installing them into a dedicated environment:
+
+```bash
+conda create -n phylo -c conda-forge -c bioconda iqtree mafft muscle mrbayes
+conda activate phylo
+```
+
+### 3.1 IQ-Tree
+
+**What it is:** A fast and widely used program for maximum-likelihood phylogenetic inference. It includes automatic model selection (ModelFinder), ultrafast bootstrap approximation, and tests for branch support and tree topology.
+
+**Installation:**
+
+- Download binaries from [iqtree.org](https://iqtree.org/) or the [GitHub releases page](https://github.com/iqtree/iqtree3/releases).
+- Via conda: `conda install -c bioconda iqtree`
+- Note that the name of the executable depends on the version (`iqtree2` or `iqtree3`). Check with the command below.
+
+**Typical usage:**
+
+```bash
+iqtree3 --version
+# Model selection + ML tree + 1000 ultrafast bootstraps, using all available cores
+iqtree3 -s alignment.fasta -m MFP -B 1000 -T AUTO
+```
+
+**Tip:** The main output is the `.treefile` (Newick format), and the `.iqtree` file contains a human-readable report including the selected model.
+
+### 3.2 MAFFT
+
+**What it is:** A multiple sequence alignment program for nucleotide and protein sequences, notable for its speed and range of strategies, from fast approximate methods to more accurate iterative refinement.
+
+**Installation:**
+
+- Download from the [MAFFT website](https://mafft.cbrc.jp/alignment/software/).
+- Via conda: `conda install -c bioconda mafft`
+- Via Homebrew: `brew install mafft`
+- Via APT: `sudo apt install mafft`
+
+**Typical usage:**
+
+```bash
+# Let MAFFT choose an appropriate strategy
+mafft --auto sequences.fasta > aligned.fasta
+
+# Use all available cores
+mafft --auto --thread -1 sequences.fasta > aligned.fasta
+```
+
+**Tip:** Always inspect alignments by eye (e.g. in AliView, section 4.1) before using them for tree inference.
+
+### 3.3 Muscle
+
+**What it is:** Another widely used multiple sequence alignment program, known for accuracy and for its ability to scale to large datasets in version 5 (which can also produce ensembles of alignments to assess alignment uncertainty).
+
+**Installation:**
+
+- Download from the [MUSCLE GitHub repository](https://github.com/rcedgar/muscle) (see also the [documentation](https://drive5.com/muscle5/)).
+- Via conda: `conda install -c bioconda muscle`
+
+**Typical usage:**
+
+```bash
+muscle -align sequences.fasta -output aligned.fasta
+```
+
+**Tip:** The command-line syntax changed substantially between version 3 and version 5 (version 3 used `-in` and `-out`). Check which version you have with `muscle -version`, and note the version in your methods.
+
+### 3.4 NextStrain
+
+**What it is:** An open-source toolkit for tracking and visualising pathogen evolution. It consists of the Nextstrain CLI (which manages the software and workflows), **Augur** (a bioinformatics toolkit for building phylogenetic analyses) and **Auspice** (an interactive visualisation of the results). Analyses are usually organised as reproducible Snakemake workflows.
+
+**Installation:** Follow the [official installation guide](https://docs.nextstrain.org/en/latest/install.html). Several "runtimes" are supported (Docker, conda, Singularity, or native installation). Docker or conda are the simplest for most users.
+
+```bash
+# Check that your setup works
+nextstrain check-setup
+```
+
+**Further information:** See the [Nextstrain documentation](https://docs.nextstrain.org/) and the public instance at [nextstrain.org](https://nextstrain.org/), where you can also view and share datasets.
+
+### 3.5 MrBayes
+
+**What it is:** A program for Bayesian phylogenetic inference using Markov chain Monte Carlo (MCMC), supporting a wide range of nucleotide, amino acid and morphological models.
+
+**Installation:**
+
+- Download from the [MrBayes website](https://nbisweden.github.io/MrBayes/) or [GitHub](https://github.com/NBISweden/MrBayes).
+- Via conda: `conda install -c bioconda mrbayes`
+- Via Homebrew: `brew install mrbayes`
+- Via APT: `sudo apt install mrbayes`
+
+**Typical usage:** Analyses are specified in a NEXUS file (data plus a `mrbayes` block of commands).
+
+```bash
+mb analysis.nex
+```
+
+**Tips:**
+
+- Always check convergence (e.g. average standard deviation of split frequencies, effective sample sizes in [Tracer](https://github.com/beast-dev/tracer/releases)) before interpreting results.
+- MrBayes can use MPI and the BEAGLE library to speed up large analyses.
+
+### 3.6 BEAST-X
+
+**What it is:** The latest generation of the BEAST (Bayesian Evolutionary Analysis Sampling Trees) software, a successor to BEAST v1.x. It performs Bayesian phylogenetic, phylogeographic and molecular clock analyses, with a focus on time-calibrated trees, and has substantial new methods for large datasets.
+
+**Installation:**
+
+- Download from [beast.community](https://beast.community/) or the [GitHub repository](https://github.com/beast-dev/beast-mcmc).
+- Requires Java (the download normally includes what you need, but see the website for details).
+- The [BEAGLE library](https://github.com/beagle-dev/beagle-lib) is strongly recommended to accelerate likelihood calculations.
+
+**Included programs:** BEAST (the analysis engine), BEAUti (a graphical tool for setting up analyses), LogCombiner, and TreeAnnotator. Use [Tracer](https://github.com/beast-dev/tracer/releases) to inspect logs and check convergence.
+
+**Typical usage:**
+
+```bash
+beast analysis.xml
+```
+
+> **More detail:** BEAST is covered in more depth on a separate page: [BEAST in fLuLab](LINK-TO-BEAST-PAGE). *(Replace with the link to your BEAST page.)*
+
+### 3.7 BEAST2
+
+**What it is:** An independently developed, separately maintained branch of BEAST, with a modular design that lets users add new models and methods through a package system. It is particularly popular for species-tree inference (\*BEAST/StarBEAST), epidemiological models (e.g. birth-death skyline) and a large number of community-developed extensions.
+
+**Installation:**
+
+- Download from [beast2.org](https://www.beast2.org/). Installers for macOS, Windows and Linux include a bundled Java runtime.
+- Via conda: `conda install -c bioconda beast2`
+
+**Included programs:** BEAST 2, BEAUti, TreeAnnotator, LogCombiner and the **Package Manager** (for installing add-on packages). Use [Tracer](https://github.com/beast-dev/tracer/releases) to check convergence.
+
+**Typical usage:**
+
+```bash
+beast analysis.xml
+
+# List and install add-on packages from the command line
+packagemanager -list
+packagemanager -add BEASTLabs
+```
+
+**Tip:** BEAST-X and BEAST2 use different XML formats and are **not interchangeable**. Take care to use the BEAUti belonging to the same program you will run, and record the version and packages used.
+
+> **More detail:** BEAST is covered in more depth on a separate page: [BEAST in fLuLab](LINK-TO-BEAST-PAGE). *(Replace with the link to your BEAST page.)*
+
+## 4. Frequently Used GUI Software
+
+### 4.1 Aliview
+
+**What it is:** A fast, lightweight viewer and editor for multiple sequence alignments. It handles large alignments well, and is useful for checking and manually correcting the output of MAFFT or MUSCLE, trimming ends, and translating sequences.
+
+**Installation:** Download from the [AliView website](https://ormbunkar.se/aliview/). It is Java-based, so it runs on macOS, Windows and Linux.
+
+**Tips:**
+
+- Alignments can be opened in FASTA, NEXUS, PHYLIP and other common formats.
+- Always eyeball alignments for misaligned regions, frameshifts and sequencing errors before building trees.
+
+### 4.2 Obsidian
+
+**What it is:** A note-taking application that stores your notes as plain Markdown files in a local folder. Notes can be linked together, which makes it useful for lab notebooks, project logs, meeting notes and building up a personal knowledge base.
+
+**Installation:** Download from [obsidian.md](https://obsidian.md/). Please check the website for the current licence terms.
+
+**Tips:**
+
+- Because notes are plain text files, they can be backed up or version-controlled (e.g. with git) like any other files.
+- Plugins can integrate Obsidian with Zotero (section 4.3), so you can cite papers directly in your notes.
+
+### 4.3 Zotero
+
+**What it is:** A free, open-source reference manager. It collects papers (with metadata and PDFs) from your browser, organises them into collections, and generates citations and bibliographies in Word, LibreOffice and Google Docs.
+
+**Installation:**
+
+- Download from [zotero.org/download](https://www.zotero.org/download/). Install both the desktop app and the **Zotero Connector** browser extension, which saves papers with one click.
+- Create a free account to sync your library between computers.
+
+**Tips:**
+
+- The [Better BibTeX](https://retorque.re/zotero-better-bibtex/) plugin is very helpful if you write in LaTeX or Markdown, as it creates stable citation keys and keeps a `.bib` file up to date.
+- Group libraries let the whole group share a common set of references.
