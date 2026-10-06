@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Seminars and Conferences
-has_children: true
+has_children: false
 nav_order: 5
 ---
 
@@ -26,7 +26,7 @@ Seminars are a good way to keep up with the field and meet people. Internal seri
 
 **Details:** Monday 13.00-14.00
 
-**Sign-up:** Ask Rute Pinto to be added to the mailing list.
+**Sign-up:** Ask Dr Rute Pinto to be added to the mailing list.
 
 
 ### 1.3 Phylo-Modelling Group
@@ -87,7 +87,7 @@ Dates and venues below were checked in October 2026 but are subject to change, s
 
 **Topic:** A small (~100 people), community-driven conference for infectious disease modellers, with an emphasis on new and in-progress work. Talk selection is partly randomised, and training workshops run alongside. Organised by Juniper.
 
-**Next:** The 2026 meeting (sixth edition) was held 7–9 July 2026 in Cambridge, UK. The next meeting has not yet been announced.
+**Next:** The 2026 meeting (sixth edition) was held 7–9 July 2026 in Ambleside, UK. The next meeting has not yet been announced.
 
 **Website:** [iddconf.org](https://iddconf.org/)
 
