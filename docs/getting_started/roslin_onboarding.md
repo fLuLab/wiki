@@ -16,6 +16,7 @@ Here is an unofficial onboarding checklist to keep in mind when starting your ti
 ### First week
 - [ ] Activate your Staff/Student Card (collect from the vet library).
 - [ ] Get out-of-hours authorisation signed by your PI.
+- [ ] Confirm desk allocation and request adjustments if applicable.
 - [ ] Complete mandatory training(s) on People and Money 
 - [ ] *(PGR)* Confirm a group datastore allocation has been created (ask Lu and/or James).
 - [ ] Request to be added to the fLuLab GitHub organisation (ask Lu and/or James). This requires an existing GitHub account.
@@ -23,18 +24,17 @@ Here is an unofficial onboarding checklist to keep in mind when starting your ti
 - [ ] Join the group mailing lists and calendars, including seminars (see the Seminars section).
 
 ### First month
-
 - [ ] Attend the campus induction event.
-- [ ] Obtain codes for research grants.
+- [ ] Obtain codes for research grants and share with Lu.
 - [ ] Request an ed.ac.uk alias email.
 - [ ] Register for a Key Travel account.
 - [ ] Order and set up your computer using the software list on this wiki (see the Software setup page).
 - [ ] Set up SSH Keys for EDDIE.
 - [ ] If you do not already have one, register for an [ORCID iD](https://orcid.org/) and link it to your university profile.
 - [ ] Set up a reference manager such as Zotero (see the GUI software section).
-- [ ] *(PGR)* Agree a supervisory meeting schedule and note your annual review dates.
+- [ ] *(PGR)* Agree a supervisory meeting schedule and note any mandatory milestone dates.
 - [ ] *(PGR)* Complete a training needs analysis (Your programme may provide one for you). 
 
 ### First three months
-- [ ] Find out how conference funding and travel claims work. 
+- [ ] Find out how travel/expenses claims work. 
 - [ ] Give feedback on this checklist: tell Lu or James what was missing or out of date.
