@@ -28,6 +28,7 @@ Here is an unofficial onboarding checklist to keep in mind when starting your ti
 - [ ] Obtain codes for research grants and share with Lu.
 - [ ] Request an ed.ac.uk alias email.
 - [ ] Register for a Key Travel account.
+- [ ] Register for the [UoE VPN](https://vpnreg.ucs.ed.ac.uk/ease/vpnonly.cgi).
 - [ ] Order and set up your computer using the software list on this wiki (see the Software setup page).
 - [ ] Set up SSH Keys for EDDIE.
 - [ ] If you do not already have one, register for an [ORCID iD](https://orcid.org/) and link it to your university profile.
