@@ -5,23 +5,6 @@ parent: Getting Started
 nav_order: 1
 ---
 
-Here is an unofficial onboarding checklist to keep in mind when starting your time at fLuLab.
-
-## First Week
-1. Activation of Staff/Student Card (Collect from vet library)
-2. Out of hours authorisation (Signed by PI)
-3. Confirm desk allocation and any adjustments required
-4. Complete mandatory training on P&M 
-5. For PGR students, confirm a group datastore allocation has been created (ask Lu and/or James)
-6. Request to be added to fLuLab Github organisation (ask Lu and/or James - requires an existing GitHub account)
-7. Request to be added to EERA Whatsapp channel
-
-## First Month
-1. Attended campus induction event
-2. Codes for research grants obtained
-3. Request ed.ac.uk alias email
-4. Register for Key Travel account
-
 ## Onboarding checklist
 
 Here is an unofficial onboarding checklist to keep in mind when starting your time at fLuLab. Items marked *(PGR)* apply to postgraduate research students only. If anything is unclear, ask Lu.
