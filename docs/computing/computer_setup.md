@@ -164,13 +164,7 @@ python --version
 - **Installation:** Download [PyCharm](https://www.jetbrains.com/pycharm/download/) or install it via the [JetBrains Toolbox](#24-jetbrains-toolbox). JetBrains has recently reorganised its editions, so check the download page for which features are free and which require a subscription. Students and academic staff can often get free licences (see [JetBrains for education](https://www.jetbrains.com/community/education/)).
 - Point PyCharm at your conda environment (`Settings > Project > Python Interpreter > Add Interpreter > Conda Environment`) rather than the system Python.
 
-### 2.3 Visual Studio Code (VS Code):
-
-**What it is:** A free, lightweight, extensible code editor from Microsoft that supports almost any language via extensions. It is our suggested editor for **Julia** and **Bash**, and is also a good option for Python and R.
-
-**Installation:** Download from [code.visualstudio.com](https://code.visualstudio.com/). Do not confuse it with Visual Studio, which is a different product.
-
-### 2.5 Julia
+### 2.3 Julia
 
 **What it is:** A high-level, high-performance language designed for numerical and scientific computing. It aims to combine the ease of writing of Python or R with speed approaching C, and is well suited to simulation, optimisation and differential equations.
 
@@ -193,9 +187,11 @@ curl -fsSL https://install.julialang.org | sh
 
 #### Suggested IDE: VS Code
 
+**Installation:** Download from [code.visualstudio.com](https://code.visualstudio.com/). Do not confuse it with Visual Studio, which is a different product.
+
 Install Julia first, then the official [Julia extension](https://marketplace.visualstudio.com/items?itemName=julialang.language-julia) in [VS Code](#23-visual-studio-code-vs-code-shared-editor). The extension will find Julia if `julia` is on your `PATH`.
 
-### 2.6 Bash
+### 2.4 Bash
 
 **What it is:** A command-line shell and scripting language. You will use it to navigate the file system, run programs, chain tools together, and automate repetitive tasks and jobs on remote servers and clusters.
 
