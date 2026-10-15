@@ -265,11 +265,9 @@ iqtree3 --version
 iqtree3 -s alignment.fasta -m MFP -B 1000 -T AUTO
 ```
 
-**Tip:** The main output is the `.treefile` (Newick format), and the `.iqtree` file contains a human-readable report including the selected model.
-
 ### 3.2 MAFFT
 
-**What it is:** A multiple sequence alignment program for nucleotide and protein sequences, notable for its speed and range of strategies, from fast approximate methods to more accurate iterative refinement.
+**What it is:** A multiple sequence alignment program for nucleotide and protein sequences, notable for its speed and range of strategies, from fast approximate methods to more accurate iterative refinement. To select the most appropriate algorithm, take a look at the [MAFFT documentation](https://mafft.cbrc.jp/alignment/software/).
 
 **Installation:**
 
@@ -305,8 +303,6 @@ mafft --auto --thread -1 sequences.fasta > aligned.fasta
 muscle -align sequences.fasta -output aligned.fasta
 ```
 
-**Tip:** The command-line syntax changed substantially between version 3 and version 5 (version 3 used `-in` and `-out`). Check which version you have with `muscle -version`, and note the version in your methods.
-
 ### 3.4 NextStrain
 
 **What it is:** An open-source toolkit for tracking and visualising pathogen evolution. It consists of the Nextstrain CLI (which manages the software and workflows), **Augur** (a bioinformatics toolkit for building phylogenetic analyses) and **Auspice** (an interactive visualisation of the results). Analyses are usually organised as reproducible Snakemake workflows.
@@ -336,11 +332,6 @@ nextstrain check-setup
 ```bash
 mb analysis.nex
 ```
-
-**Tips:**
-
-- Always check convergence (e.g. average standard deviation of split frequencies, effective sample sizes in [Tracer](https://github.com/beast-dev/tracer/releases)) before interpreting results.
-- MrBayes can use MPI and the BEAGLE library to speed up large analyses.
 
 ### 3.6 BEAST-X
 
@@ -383,7 +374,7 @@ packagemanager -list
 packagemanager -add BEASTLabs
 ```
 
-**Tip:** BEAST-X and BEAST2 use different XML formats and are **not interchangeable**. Take care to use the BEAUti belonging to the same program you will run, and record the version and packages used.
+**Note:** BEAST-X and BEAST2 use different XML formats and are **not interchangeable**. Take care to use the BEAUti belonging to the same program you will run, and record the version and packages used.
 
 > **More detail:** BEAST is covered in more depth on a separate page: [BEAST in fLuLab](LINK-TO-BEAST-PAGE). *(Replace with the link to your BEAST page.)*
 
@@ -396,9 +387,7 @@ packagemanager -add BEASTLabs
 **Installation:** Download from the [AliView website](https://ormbunkar.se/aliview/). It is Java-based, so it runs on macOS, Windows and Linux.
 
 **Tips:**
-
-- Alignments can be opened in FASTA, NEXUS, PHYLIP and other common formats.
-- Always eyeball alignments for misaligned regions, frameshifts and sequencing errors before building trees.
+- Always eyeball alignments for misaligned regions, frameshifts and sequencing errors before building trees. If you intend to use position-aware nucleotide substitution models, you should ensure your alignment remains in-frame throughout.
 
 ### 4.2 Obsidian
 
@@ -421,6 +410,5 @@ packagemanager -add BEASTLabs
 - Create a free account to sync your library between computers.
 
 **Tips:**
-
-- The [Better BibTeX](https://retorque.re/zotero-better-bibtex/) plugin is very helpful if you write in LaTeX or Markdown, as it creates stable citation keys and keeps a `.bib` file up to date.
+- Integrates with online LaTeX editor Overleaf. 
 - Group libraries let the whole group share a common set of references.

@@ -79,7 +79,7 @@ Dates and venues below were checked in October 2026 but are subject to change, s
 
 **Topic:** A long-running meeting for quantitative and computational approaches to viral dynamics (within-host and cellular modelling) and to viral evolution and population genetics. Many methods originated in HIV research and are now applied to other viruses such as SARS-CoV-2.
 
-**Next:** The 33rd meeting was held 19–22 May 2026 at UBC Okanagan, Kelowna, Canada. The next meeting has not yet been announced.
+**Next:** 25-28 May 2027, Châteauform' La Grande Abbaye de la Ramée, Jodoigne, Belgium. Abstract submission closes 11 Feb 2027, and early-bird registration closes 15 March 2027.
 
 **Website:** [dynamicsevolution.org](https://dynamicsevolution.org/)
 
