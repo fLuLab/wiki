@@ -6,5 +6,5 @@ gem "jekyll", "~> 4.4.1" # installed by `gem jekyll`
 #gem "just-the-docs", "0.12.0" # pinned to the current release
 gem "just-the-docs"        # always download the latest release
 
-gem 'bigdecimal', '~> 3.1'
+gem 'bigdecimal', '~> 4.1'
 gem 'json', '~> 2.6'
